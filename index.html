@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Template</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader');
+
+    // Check if this is the user's first time on the home page in this session
+    const alreadyVisited = sessionStorage.getItem('visited_homepage');
+
+    if (!alreadyVisited) {
+      // First visit - show loader
+      loader.style.display = 'flex';
+
+      setTimeout(() => {
+        loader.style.display = 'none';
+        // Mark that loader has been shown
+        sessionStorage.setItem('visited_homepage', 'yes');
+      }, 5000); // 5 seconds or however long your loader animation is
+    } else {
+      // Loader already shown this session - skip
+      loader.style.display = 'none';
+    }
+  });
+</script>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="circle">
+    <img src="brandimg.png" alt="Logo" />
+  </div>
+  <div class="loading-line"></div>
+</div>
+    <!-- Header Section -->
+    <header>
+        <a href="index.html">
+    <img src="image copy.png" class="logo" alt="Clickable Image"  >
+</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="templates.html">Templates</a></li>
+                <li><a href="ordernow.html">Order Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>STYLE, CLICK, DELIVERED</h1>
+            <button onclick="window.location.href='https://wa.me/+923708331751 '">Order Now</button> 
+        </div>
+        <img src="image.png" alt="Hero Image" class="hero-image">
+    </section>
+
+  
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const loader = document.getElementById('loader');
+      if (loader) loader.style.display = 'none';
+    }, 6000); // 6 seconds = animation length
+  });
+</script>
+
+</body>
+</html>
