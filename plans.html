@@ -3,44 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Plans - Design With Ammar</title>
+  <title>Plans</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <!-- Header Section -->
-    <header>
-        <a href="index.html">
-    <img src="brandimg.png" class="logo" alt="Clickable Image"  >
-</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="templates.html">Templates</a></li>
-                <li><a href="plans.html">Plans</a> </li>
-            </ul>
-        </nav>
-    </header>
-    
-  <h1>Plans</h1>
-<p>If You Buy Subscription You Would Be Able To Cutomize Yours But The Subscription Button Will remain Buy Now</p>
-  <div class="plans-container">
-    <!-- Normal Subscription -->
-    <div class="plan-box">
-      <div class="plan-title">Normal Subscription</div>
-      <div class="plan-price">Free Plan or Basic Features</div>
-      <p>Includes basic template designes.</p>
-    </div>
+  <!-- Header Section -->
+  <header>
+    <a href="index.html">
+      <img src="brandimg.png" class="logo" alt="Clickable Image">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="plans.html">Pro</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Silver Subscription -->
+  <h1>Plans</h1>
+  <p>If you buy Pro, you will get 3 Customizable Pro Templates.</p>
+  <P>NOTE:The subscription button will still say "Buy Now"</P>
+
+
+    <!-- Pro Subscription -->
     <div class="plan-box">
-      <div class="plan-title">Silver Subscription</div>
+      <div class="plan-title">Pro Subscription</div>
       <div class="plan-price">PKR 499 / Month</div>
-      <p>Includes full template cutomization and premium support.</p>
-      <a class="buy-btn" href="https://wa.me/923708331751?text=Hi,%20I'm%20interested%20in%20the%20Silver%20Subscription!" target="_blank">
-        Buy Now
-      </a>
+      <p>Unlock full template customization, Pro assets, and premium support.</p>
+      <button class="buy-btn" onclick="openModal()">Buy Now</button>
     </div>
   </div>
 
+  <!-- Popup Modal -->
+  <div id="proModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Upgrade to Pro</h2>
+      <ul>
+        <li >✔ Owner Will design templates with style.</li>
+        <li>✔ Users suggest styles,owner make display styles.</li>
+        <li>✔ Owner sees brand stay perfect.</li>
+      </ul>
+      <a href="https://wa.me/923708331751?text=Hi,%20I'm%20interested%20in%20the%20Pro%20Subscription!" target="_blank" class="buy-btn">Confirm via WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("proModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("proModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("proModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
